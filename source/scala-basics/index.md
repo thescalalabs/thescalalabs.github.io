@@ -1,40 +1,65 @@
 ---
-title: scala-basics
+title: Scala Basics
 date: 2016-10-16 09:02:21
+description:  Learn the basics of programming with scala
 ---
 
-Type parameters are concepts that lets you abstract a specific `class` / `function` over a range of types. In other words the classes and functions that has type parameters can work with instance of types that are within the limit of the specified type parameter. Type parameters in scala are similar to generics in Java. Default scala collections make heavy use of type parameters. This is because a collection by itself is an abstract entity and it can work with multiple types. `List` is one such collection. It can work with `Int`, `String` or even custom classes. `List` does not care about the entity inside the collection. Irrespective of the entity inside, it provides few operations like `map`, `filter` etc. Type parameters are usually written inside `[]` in scala where as in java, it is written inside `<>`. It is usually denoted by single letter upper case letters like `A`, `B`, `T` etc.
+## Declaring Values and Variables
+There two ways of declaring things that hold information in scala. 1. A value declared with `val` and a variable declared with 2. `var`. A value is just a constant. Once defined it can not be changed. In other words, it is immutable. On the other hand, variable is like any other variable in other languages. It can be changed and is mutable.
 
 ``` scala
-val listOfIntegers : List[Int] = List(1,2,3)
-val listOfString : List[String] = List("a","b","c")
+val languageName = "scala"
+languageName = "scala 2.12" // compilation error
+```
+``` scala
+var languageName = "scala"
+languageName = "scala 2.12" // valid scala code
 ```
 
-In the above code, the `List` is the collection. As you can see, it is used with both `String` and `Int`. In the case of `listOfIntegers`, the list has been parameterized with  `Int` and in the case of `listOfString`, the list has been parameterized with `String`. The definition of list would look like the following:
+<div class="ui info message">
+  In the above code snippet, the name of both are `languageName`. This is valid because, after the declaration of the immutable `languageName`, the mutable declaration hides it. This creates a new binding in the current scope for `languageName`.
+</div>
 
-```
-case class List[A]()....
-```
+In the first code snippet, reassigning `languageName` throws an error because `val` is immutable. Once assigned a value, it cannot be reassigned. In the second code snippet, reassignment is allowed because it is a `var`.
 
-Here `A` is the type place holder for the type parameter. This shows that parameteried types can work with values of any types. There is one more method to accomplish storing of different values in a collection in Java. It is the `ArrayList` type that lives under `java.util` package. Let see an example of `ArrayList` in action below.
+### Immutable vs Mutable
 
+## Variable Types and Type Inference
+Scala is a statically typed language. This means that each value has a type associated with it. The types should match in order for the program to compile successfully. Scala also has local type inference. This means that it can infer the types of values and variables most of the times without we mentioning it. This reduces the verbosity of the code.
+
+In scala, the type is mentioned after the value and not before as in java. For example, in java, declaring an integer would be
 ``` java
-import java.util.*;
-ArrayList stringArrayList = new ArrayList();
-stringArrayList.add("a");
-stringArrayList.add("b");
-stringArrayList.add("c");
-ArrayList numberArrayList = new ArrayList();
-numberArrayList.add(1);
-numberArrayList.add(2);
-numberArrayList.add(3);
+int age = 27
+```
+where as in scala, it is
+``` scala
+val age : Int = 27
 ```
 
-As you can see, the `stringArrayList` and `numberArrayList` can work both strings and ints. So what is the difference between this `ArrayList` in java and `List` in scala? Well an `ArrayList` instance can accept a value of any type. But a `List` of `Int` can accept only integers.
+One important point to note is that it is an error to declare a value or a variable without initializing it. This gives rise to a question that how do we handle declaring values and initializing it inside the constructor of a class. Well scala has its own way of achieving this. Also separating the declaration and initialization are source of the dreaded `NullPointerExcpetion`. Writing idiomatic scala code means avoiding null pointer exceptions as much as possible. Scala does not prohibit you from writing code that is initialized with null like `val name : String = null`. It is the users responsibility to avoid null pointer exceptions in this case.
+
+Also notice that there are no semicolons at the end. Semicolons are required only if there are multiple statements within a single line. In that case, each statement should be delimited by a semicolon.
+
+
+Declaration of multiple values together is possible. But all of them will be initialized with the single value.
 
 ``` scala
-stringArrayList.add(4); // this is valid in java
-listOfString +: "a" // this is a compile time error in scala
+> val length, breadth = 100
+length: Int = 100
+breadth: Int = 100
+```
+Trying to initialize multiple bindings with different values in the same line will cause a compilation error.
+``` scala
+> val length, breadth = 50, 20
+<console>:1: error: ';' expected but ',' found.
+val length, breadth = 100,20
+                         ^
+```
+If you want to achieve the above, you can use the destructuring capabilities of scala with tuples like below:
+``` scala
+> val (length, breadth) = (50, 20)
+length: Int = 50
+breadth: Int = 20
 ```
 
-What is the meaning of the above code snippet? It means that though `ArrayList` can accept value of any type, it cannot provide operations specific to the type it accepts. Thats because it accepts `Object` which is the super class of all classes in java. It can only provide operations that are possible on an `Object`. Where as, the scala `List` can accept values of any type, but it can accept values of only one type for a single instance of the list. This means, the `List` is aware of the type it takes in and hence can provide some additional type safety. We will see about this type safety in detail later.
+## Commonly used types

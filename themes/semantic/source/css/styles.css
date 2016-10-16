@@ -19,8 +19,17 @@
   padding: 30px;
 }
 
-.highlight{
+/*.highlight{
   padding: 10px;
-  border: 2px solid whitesmoke;
+  border: 1px solid #6435C9;
   border-radius: 3px;
+}*/
+code{
+  color: #6435C9;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: #f9f2f4 !important;
+}
+.ui.attached.message{
+  padding: 10px;
 }
