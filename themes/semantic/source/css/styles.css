@@ -1,0 +1,14 @@
+.announcement{
+  height: 300px;
+  border-radius: 0px !important;
+}
+
+.ui.stackable.menu{
+  margin-bottom: 0px;
+}
+.main-menu{
+  border-radius: 0px !important;
+}
+.big-container{
+  padding: 30px;
+}
