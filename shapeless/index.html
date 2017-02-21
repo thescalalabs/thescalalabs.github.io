@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#333">
+    
+    <title>shapeless | Scala Labs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="shapeless">
+<meta property="og:url" content="http://yoursite.com/shapeless/index.html">
+<meta property="og:site_name" content="Scala Labs">
+<meta property="og:updated_time" content="2017-02-17T13:07:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shapeless">
+    
+      <link rel="alternate" href="/atom.xml" title="Scala Labs" type="application/atom+xml">
+    
+    
+      <link rel="icon" href="/assets/img/scala-logo.png">
+    
+    
+      <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+
+    <meta name="description" content="Material Style Theme">
+    <link rel="shortcut icon" href="assets/img/favicon.png?v=3">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/preload.min.css" />
+    <link rel="stylesheet" href="/assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.deep-purple-500.min.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+<body>
+    <div id="ms-preload" class="ms-preload">
+      <div id="status">
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-site-container">
+      <div class="modal modal-primary" id="ms-account-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog animated zoomIn animated-3x" role="document">
+        <div class="modal-content">
+          <div class="modal-header shadow-2dp no-pb">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="zmdi zmdi-close"></i>
+              </span>
+            </button>
+            <div class="modal-title text-center">
+              <span class="ms-logo ms-logo-white ms-logo-sm mr-1">M</span>
+              <h3 class="no-m ms-site-title">Material
+                <span>Style</span>
+              </h3>
+            </div>
+            <div class="modal-header-tabs">
+              <ul class="nav nav-tabs nav-tabs-full nav-tabs-3 nav-tabs-primary" role="tablist">
+                <li role="presentation" class="active">
+                  <a href="#ms-login-tab" aria-controls="ms-login-tab" role="tab" data-toggle="tab" class="withoutripple">
+                    <i class="zmdi zmdi-account"></i> Login</a>
+                </li>
+                <li role="presentation">
+                  <a href="#ms-register-tab" aria-controls="ms-register-tab" role="tab" data-toggle="tab" class="withoutripple">
+                    <i class="zmdi zmdi-account-add"></i> Register</a>
+                </li>
+                <li role="presentation">
+                  <a href="#ms-recovery-tab" aria-controls="ms-recovery-tab" role="tab" data-toggle="tab" class="withoutripple">
+                    <i class="zmdi zmdi-key"></i> Recovery Pass</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade active in" id="ms-login-tab">
+                <form autocomplete="off">
+                  <fieldset>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-account"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-user">Username</label>
+                        <input type="text" id="ms-form-user" class="form-control"> </div>
+                    </div>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-lock"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-pass">Password</label>
+                        <input type="password" id="ms-form-pass" class="form-control"> </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col-md-6">
+                        <div class="form-group no-mt">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember Me </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="btn btn-raised btn-primary pull-right">Login</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+                <div class="text-center">
+                  <h3>Login with</h3>
+                  <a href="javascript:void(0)" class="wave-effect-light btn btn-raised btn-facebook">
+                    <i class="zmdi zmdi-facebook"></i> Facebook</a>
+                  <a href="javascript:void(0)" class="wave-effect-light btn btn-raised btn-twitter">
+                    <i class="zmdi zmdi-twitter"></i> Twitter</a>
+                  <a href="javascript:void(0)" class="wave-effect-light btn btn-raised btn-google">
+                    <i class="zmdi zmdi-google"></i> Google</a>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="ms-register-tab">
+                <form>
+                  <fieldset>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-account"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-user">Username</label>
+                        <input type="text" id="ms-form-user" class="form-control"> </div>
+                    </div>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-email"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-email">Email</label>
+                        <input type="email" id="ms-form-email" class="form-control"> </div>
+                    </div>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-lock"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-pass">Password</label>
+                        <input type="password" id="ms-form-pass" class="form-control"> </div>
+                    </div>
+                    <div class="form-group label-floating">
+                      <div class="input-group">
+                        <span class="input-group-addon">
+                          <i class="zmdi zmdi-lock"></i>
+                        </span>
+                        <label class="control-label" for="ms-form-pass">Re-type Password</label>
+                        <input type="password" id="ms-form-pass" class="form-control"> </div>
+                    </div>
+                    <button class="btn btn-raised btn-block btn-primary">Register Now</button>
+                  </fieldset>
+                </form>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="ms-recovery-tab">
+                <fieldset>
+                  <div class="form-group label-floating">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="zmdi zmdi-account"></i>
+                      </span>
+                      <label class="control-label" for="ms-form-user">Username</label>
+                      <input type="text" id="ms-form-user" class="form-control"> </div>
+                  </div>
+                  <div class="form-group label-floating">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="zmdi zmdi-email"></i>
+                      </span>
+                      <label class="control-label" for="ms-form-email">Email</label>
+                      <input type="email" id="ms-form-email" class="form-control"> </div>
+                  </div>
+                  <button class="btn btn-raised btn-block btn-primary">Send Password</button>
+                </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <header class="ms-header ms-header-primary">
+        <div class="container container-full">
+          <div class="ms-title">
+            <a href="/">
+              <!-- <img src="assets/img/demo/logo-header.png" alt=""> -->
+              <span class="ms-logo animated zoomInDown animation-delay-5">S</span>
+              <h1 class="animated fadeInRight animation-delay-6">
+                <span>Scala Labs</span>
+              </h1>
+            </a>
+          </div>
+          <div class="header-right">
+            <div class="share-menu">
+              <ul class="share-menu-list">
+                <li class="animated fadeInRight animation-delay-3">
+                  <a href="javascript:void(0)" class="btn-circle btn-google">
+                    <i class="zmdi zmdi-google"></i>
+                  </a>
+                </li>
+                <li class="animated fadeInRight animation-delay-2">
+                  <a href="javascript:void(0)" class="btn-circle btn-facebook">
+                    <i class="zmdi zmdi-facebook"></i>
+                  </a>
+                </li>
+                <li class="animated fadeInRight animation-delay-1">
+                  <a href="javascript:void(0)" class="btn-circle btn-twitter">
+                    <i class="zmdi zmdi-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+              <a href="javascript:void(0)" class="btn-circle btn-circle-primary animated zoomInDown animation-delay-7">
+                <i class="zmdi zmdi-share"></i>
+              </a>
+            </div>
+            <a href="javascript:void(0)" class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8" data-toggle="modal" data-target="#ms-account-modal">
+              <i class="zmdi zmdi-account"></i>
+            </a>
+            <form class="search-form animated zoomInDown animation-delay-9">
+              <input id="search-box" type="text" class="search-input" placeholder="Search..." name="q">
+              <label for="search-box">
+                <i class="zmdi zmdi-search"></i>
+              </label>
+            </form>
+            <a href="javascript:void(0)" class="visible-xs btn-ms-menu btn-circle btn-circle-primary sb-toggle-left animated zoomInDown animation-delay-10">
+              <i class="zmdi zmdi-menu"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <nav class="navbar yamm ms-navbar ms-navbar-primary navbar-static-top">
+        <div class="container container-full">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+              <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> -->
+              <span class="ms-logo ms-logo-sm">S</span>
+                <strong>Scala Labs</strong>
+              </span>
+            </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="">
+                <a href="/" class=" animated fadeIn animation-delay-4"  data-name="home">Home
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle animated fadeIn animation-delay-5" data-toggle="dropdown" data-hover="dropdown" data-name="page">Courses
+                  <i class="zmdi zmdi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                  <li>
+                    <a href="/scala" class="dropdown-link">Scala</a>
+                  </li>
+                  <li>
+                    <a href="/akka" class="dropdown-link">Akka</a>
+                  </li>
+                  <li>
+                    <a href="/play-framework" class="dropdown-link">Play</a>
+                  </li>
+                  <li>
+                    <a href="/sbt" class="dropdown-link">SBT</a>
+                  </li>
+                  <li>
+                    <a href="/slick" class="dropdown-link">Slick</a>
+                  </li>
+                  <li>
+                    <a href="/shapeless" class="dropdown-link">Shapeless</a>
+                  </li>
+                  <li>
+                    <a href="/cats" class="dropdown-link">Cats</a>
+                  </li>
+                  <li>
+                    <a href="/scala-test" class="dropdown-link">Scala Test</a>
+                  </li>
+                </ul>
+              </li>
+              <li class=" yamm-fw">
+                <a href="/blog" class="animated fadeIn animation-delay-6"   role="button" aria-haspopup="true" aria-expanded="false" data-name="component">Blog
+                </a>
+              </li>
+              <li class="">
+                <a href="/news" class="animated fadeIn animation-delay-7"   role="button" aria-haspopup="true" aria-expanded="false" data-name="blog">News
+                </a>
+              </li>
+              <li class="">
+                <a href="/events"  aria-haspopup="true" aria-expanded="false" data-name="portfolio">Events
+                </a>
+              </li>
+              <li class="">
+                <a href="/contact" class="animated fadeIn animation-delay-9"   role="button" aria-haspopup="true" aria-expanded="false" data-name="ecommerce">Contact Us
+                </a>
+              </li>
+              <!-- <li class="btn-navbar-menu"><a href="javascript:void(0)" class="sb-toggle-left"><i class="zmdi zmdi-menu"></i></a></li> -->
+            </ul>
+          </div>
+          <!-- navbar-collapse collapse -->
+          <a href="javascript:void(0)" class="visible-xs sb-toggle-left btn-navbar-menu">
+            <i class="zmdi zmdi-menu"></i>
+          </a>
+        </div>
+        <!-- container -->
+      </nav>
+
+
+
+      
+
+      <aside class="ms-footbar bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 ms-footer-col" style="height: 442px;">
+        <div class="ms-footbar-block">
+          <h3 class="ms-footbar-title">Sitemap</h3>
+          <ul class="list-unstyled ms-icon-list three_cols">
+            <li>
+              <a href="index.html">
+                <i class="zmdi zmdi-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="page-blog.html">
+                <i class="zmdi zmdi-edit"></i> Blog</a>
+            </li>
+            <li>
+              <a href="page-blog.html">
+                <i class="zmdi zmdi-image-o"></i> News</a>
+            </li>
+            <li>
+              <a href="portfolio-filters_sidebar.html">
+                <i class="zmdi zmdi-case"></i> Products</a>
+            </li>
+            <li>
+              <a href="page-timeline_left2.html">
+                <i class="zmdi zmdi-time"></i> Events</a>
+            </li>
+            <li>
+              <a href="page-pricing.html">
+                <i class="zmdi zmdi-money"></i> Contact Us</a>
+            </li>
+            <li>
+              <a href="page-about.html">
+                <i class="zmdi zmdi-favorite-outline"></i> Our Team</a>
+            </li>
+          </ul>
+        </div>
+        <div class="ms-footbar-block">
+          <h3 class="ms-footbar-title">Subscribe</h3>
+          <p class="">Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.</p>
+          <form>
+            <div class="form-group label-floating mt-2 mb-1 is-empty">
+              <div class="input-group ms-input-subscribe">
+                <label class="control-label" for="ms-subscribe">
+                  <i class="zmdi zmdi-email"></i> Email Adress</label>
+                <input type="email" id="ms-subscribe" class="form-control"> </div>
+            <span class="material-input"></span></div>
+            <button class="ms-subscribre-btn" type="button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-7 ms-footer-col " style="height: 442px;">
+        <div class="ms-footbar-block">
+          <h3 class="ms-footbar-title text-center mb-2">Last Articles</h3>
+          <div class="ms-footer-media">
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="javascript:void(0)">
+                  <img class="media-object media-object-circle" src="/assets/img/demo/p75.jpg" alt="..."> </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="javascript:void(0)">Lorem ipsum dolor sit expedita cumque amet consectetur adipisicing repellat</a>
+                </h4>
+                <div class="media-footer">
+                  <span>
+                    <i class="zmdi zmdi-time color-info-light"></i> August 18, 2016</span>
+                  <span>
+                    <i class="zmdi zmdi-folder-outline color-warning-light"></i>
+                    <a href="javascript:void(0)">Design</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="javascript:void(0)">
+                  <img class="media-object media-object-circle" src="/assets/img/demo/p75.jpg" alt="..."> </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="javascript:void(0)">Labore ut esse Duis consectetur expedita cumque ullamco ad dolor veniam velit</a>
+                </h4>
+                <div class="media-footer">
+                  <span>
+                    <i class="zmdi zmdi-time color-info-light"></i> August 18, 2016</span>
+                  <span>
+                    <i class="zmdi zmdi-folder-outline color-warning-light"></i>
+                    <a href="javascript:void(0)">News</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left media-middle">
+                <a href="javascript:void(0)">
+                  <img class="media-object media-object-circle" src="/assets/img/demo/p75.jpg" alt="..."> </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="javascript:void(0)">voluptates deserunt ducimus expedita cumque quaerat molestiae labore</a>
+                </h4>
+                <div class="media-footer">
+                  <span>
+                    <i class="zmdi zmdi-time color-info-light"></i> August 18, 2016</span>
+                  <span>
+                    <i class="zmdi zmdi-folder-outline color-warning-light"></i>
+                    <a href="javascript:void(0)">Productivity</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-5 ms-footer-col ms-footer-text-right" style="height: 442px;">
+        <div class="ms-footbar-block">
+          <div class="ms-footbar-title">
+            <span class="ms-logo ms-logo-white ms-logo-sm mr-1">S</span>
+            <h3 class="no-m ms-site-title">
+              <span>Scala Labs</span>
+            </h3>
+          </div>
+          <address class="no-mb">
+            <p>
+              <i class="color-danger-light zmdi zmdi-pin mr-1"></i> 795 Folsom Ave, Suite 600</p>
+            <p>
+              <i class="color-warning-light zmdi zmdi-map mr-1"></i> San Francisco, CA 94107</p>
+            <p>
+              <i class="color-info-light zmdi zmdi-email mr-1"></i>
+              <a href="mailto:mail@aravindh.io">mail@aravindhio</a>
+            </p>
+            <p>
+              <i class="color-royal-light zmdi zmdi-phone mr-1"></i>+34 123 456 7890 </p>
+            <p>
+              <i class="color-success-light fa fa-fax mr-1"></i>+34 123 456 7890 </p>
+          </address>
+        </div>
+        <div class="ms-footbar-block">
+          <h3 class="ms-footbar-title">Social Media</h3>
+          <div class="ms-footbar-social">
+            <a href="javascript:void(0)" class="btn-circle  btn-facebook">
+              <i class="zmdi zmdi-facebook"></i>
+            </a>
+            <a href="javascript:void(0)" class="btn-circle btn-twitter">
+              <i class="zmdi zmdi-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="btn-circle btn-youtube">
+              <i class="zmdi zmdi-youtube"></i>
+            </a>
+            <br>
+            <a href="javascript:void(0)" class="btn-circle btn-google">
+              <i class="zmdi zmdi-google"></i>
+            </a>
+            <a href="javascript:void(0)" class="btn-circle btn-instagram">
+              <i class="zmdi zmdi-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="btn-circle btn-github">
+              <i class="zmdi zmdi-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+      
+      <footer class="ms-footer bg-primary" style="height:100%">
+        <div class="container">
+          <p>Copyright © Scala Labs 2017</p>
+        </div>
+      </footer>
+    </div>
+    <!-- sb-site-container -->
+    <!--  -->
+
+    <script src="/assets/js/plugins.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+    <script src="/assets/js/lead.js"></script>
+    <script src="/assets/js/home-generic-7.js"></script>
+
+  </body>

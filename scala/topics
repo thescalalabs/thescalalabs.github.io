@@ -1,0 +1,91 @@
+Basics
+  REPL
+  val
+  var
+  function
+  operators
+  type inference
+  type ascription
+  mutable vs immutable
+  no semicolon
+Control Structures
+  if
+  while
+  do while
+  for
+Classes
+  classes
+  case classes
+  inheritance
+  abstract class
+  overriding & overloading
+objects
+  apply
+  unapply
+  applyseq
+  unapply seq
+traits
+  mixin
+exceptions
+  try
+  catch
+  finally
+  option
+  either
+  Try
+packages & imports
+  package object
+  {_ => _}
+  localized imports
+  visibility
+pattern matching
+    Partial functions
+implicits
+  implicit resolution rules
+  implicit params
+  implicit methods
+  Type Classes
+Enums
+Higher Orderism
+  Currying
+  partial functions
+  recursion
+Interpolations
+Type Variance
+  upper bounds
+  lower bounds
+  view bounds
+  type bounds
+  abstract members
+Concurrency
+  Futures
+  executors
+  promise
+Collections
+  List
+  Map
+  Array
+  Vector
+  Tuples
+Dynamic Typing
+Java Interop
+Files
+Regex
+Type Hierarchy
+Equality
+Types
+  Higher Kinded Types
+  Phantom Types
+  Tagged Types
+  Path dependent types
+  Unified types
+  Intersection types
+  Self Types
+  Value Types
+  Singleton Types
+  Structural Types
+  Existential Types
+Meta Programming
+  Macros
+  Quasiquotes
+  Shapeless
